@@ -16,6 +16,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.screenswitch.ui.theme.ScreenSwitchTheme
 import com.example.screenswitch.view.Tela1
 import com.example.screenswitch.view.Tela2
+import com.example.screenswitch.view.Tela3
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,18 +36,14 @@ class MainActivity : ComponentActivity() {
                 ){
                     Tela2(navController)
                 }
+
+                composable(
+                    route = "Tela3"
+                ){
+                    Tela3(navController)
+                }
             }
         }
     }
 }
 
-@Composable
-fun Main() {
-
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-
-}
