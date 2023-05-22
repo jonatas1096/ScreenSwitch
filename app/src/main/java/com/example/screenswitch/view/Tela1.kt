@@ -1,5 +1,6 @@
 package com.example.screenswitch.view
 
+
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -27,7 +28,6 @@ import com.example.screenswitch.R
 
 
 
-
 @Composable
 fun Tela1(navController: NavController){
 
@@ -42,10 +42,10 @@ fun Tela1(navController: NavController){
             .align(Alignment.Center)
             .padding(bottom = 310.dp)
             .padding(top = 200.dp)
-
         )
         {
-            Image( // IMAGEM DO MEIO
+
+       Image( // IMAGEM DO MEIO
                 painter = painterResource(id = R.drawable.bluesky),
                 contentDescription = "Image",
                 modifier = Modifier.fillMaxSize()
@@ -54,20 +54,27 @@ fun Tela1(navController: NavController){
 
             TextField(value = "", onValueChange = {}, //Login
                 modifier = Modifier
-                    .width(240.dp)
-                    .height(50.dp)
+                    .width(220.dp)
+                    .height(52.dp)
                     .offset(y = (-30).dp)
                     .align(Alignment.Center),
-                placeholder = {Text(text = "Login")}
+                placeholder = {Text(text = "Login",
+                    color = Color.White,
+                    fontWeight = FontWeight.Bold,
+                )}
             )
 
             TextField(value = "", onValueChange = {}, //Senha
                 modifier = Modifier
-                    .width(240.dp)
+                    .width(220.dp)
                     .height(50.dp)
                     .offset(y = (60).dp)
                     .align(Alignment.Center),
-                placeholder = {Text(text = "Senha")}
+                placeholder = {Text(text = "Senha",
+                    color = Color.White,
+                    fontWeight = FontWeight.Bold,
+
+                    )}
             )
         }
 
@@ -80,14 +87,18 @@ fun Tela1(navController: NavController){
             .align(Alignment.Center),
         ){
                 Button( //BOTÃO LOGAR
-                    onClick = { navController.navigate("Tela3") },
+                    onClick = { navController.navigate("Tela2") },
                     modifier = Modifier
                         .fillMaxWidth()
-                        .height(45.dp)
-                    ,
-                    colors = ButtonDefaults.buttonColors(backgroundColor = Color.LightGray)
+                        .height(45.dp),
+                    colors = ButtonDefaults.buttonColors(backgroundColor = Color(255,255,255)),
                 ) {
-                    Text(text = "Logar")
+                    Text(text = "Logar",
+                    color = Color.Black,
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 22.sp,
+
+                     )
                 }
         } //BOX PARA O BOTÃO
 
@@ -99,7 +110,7 @@ fun Tela1(navController: NavController){
         ){
             Text(text = "Não possui conta? Cadastre-se!",
             modifier = Modifier
-                .clickable { navController.navigate("tela2") }
+                .clickable { navController.navigate("tela3") }
                 .align(Alignment.Center),
                 color = Color.White,
                 fontWeight = FontWeight.Bold,
